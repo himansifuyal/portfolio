@@ -1,0 +1,627 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+/*sidebar*/
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Sidebar width */
+  background-color: #080808; /* Dark background color */
+  color: rgb(255, 255, 255); /* White text color */
+  padding: 20px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 0 10px 10px 0; /* Rounded right corners */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+/* Navigation Menu Styling */
+.sidebar .nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.sidebar .nav-menu a:hover {
+  background-color: #c08453; /* Light hover effect */
+  transform: translateX(10px); /* Slight movement to the right */
+}
+
+/* Icons next to links */
+.sidebar .nav-menu a i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Mobile View: Sidebar adjusts to screen size */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 200px; /* Reduce width for mobile */
+  }
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-link.active {
+  background-color: #bb9c38; /* Change to the color you want for the active state */
+}
+
+.nav-link i {
+  margin-right: 10px;
+}
+
+.nav-link:hover {
+  background-color: #555; /* Add hover effect if needed */
+}
+/*sidebar photo*/
+.profile-photo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 6px solid rgba(145, 145, 145, 0.753); 
+
+}
+.sidebar .profile-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar .profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.sidebar .welcome-message {
+  font-size: 1em;
+  font-weight: bold;
+  color: #9e9ad6;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*home*/
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; /* Ensure the container is the full height of the viewport */
+    background-image: url('jkl.jpg'); /* Your image path */
+    background-size: cover; /* The image will cover the entire section */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* This keeps the background fixed while scrolling */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff2f2; /* Ensure text is readable */
+    padding: 20px;
+}
+#home h1 {
+  font-size: 4em;
+  color: #000000;
+  margin-bottom: 0.3em;
+  
+}
+
+#home .subheading {
+  font-size: 2em;
+  color: #000000;
+  font-weight: bold;
+}
+/*navigation menu*/
+.nav-menu {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-menu a {
+  color: #fffbfb;
+  text-decoration:none;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.nav-menu a:hover {
+  background-color: #b39191;
+}
+/*content*/
+.content {
+  flex-grow: 1;
+  margin-left: 250px;
+  padding: 15px;
+  background-color: #d3cdcd9d;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.typing.underline {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px; /* Space between text and underline */
+    border-bottom: 4px solid #3d3d3d; /* Underline style */
+  }
+/*about*/
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #6779c56c;
+    padding: 50px 20px;
+    color: #333;
+
+  }
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+/*about me*/
+  #about .top-item {
+    font-size: 3em;
+    color: #303030;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+}
+
+#about .top-item::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjusts the space between text and underline */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%; /* Width of the underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: #5c5555;
+    
+  }
+  .about-text {
+    width: 60%;
+    padding-right: 20px;
+    margin-top: -50px;   
+  }
+  
+  .about-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 0em;
+    color: #161616;
+  }
+  
+  .about-image {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 5px solid #4b4949ef;
+  }
+  @media (max-width: 768px) {
+    #about {
+      padding: 30px 10px;
+      flex-direction: column;
+    }
+  
+}
+.personal-details {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #313030;
+    text-align: center;
+    
+  }
+  
+  .personal-details p {
+    margin: 4px 0;
+    font-family: Arial, sans-serif;
+  }
+  /*skills*/
+  #skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #a8a8a86c;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  #skills .top-item {
+    font-size: 3em;
+    color: #3f3b3b;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+}
+
+#skills .top-item::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjusts the space between text and underline */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Width of the underline */
+    height: 3px; /* Thickness of the underline */
+    background-color: #5c5555;
+}
+
+  .skills-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+  }
+  
+  .skills-section {
+    width: 30%; /* Ensures the boxes are equally divided */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(128, 95, 248, 0.39);
+    border-radius: 15px;
+  }
+
+  .skills-section:hover {
+    transform: translateY(-5px); /* Moves the box slightly upwards */
+    box-shadow: 0 4px 15px rgba(201, 142, 75, 0.575); /* Adds a shadow on hover */
+    background-color: #e0d53691; /* Slightly darker background on hover */
+}
+.skills-section h3 {
+    font-size: 2em;
+    color: #333; /* Adjust color as needed */
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px; /* Space between heading and content */
+}
+
+.skills-section h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjusts the space between text and underline */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Width of the underline */
+    height: 1px; /* Thickness of the underline */
+    background-color: #817676; /* Color of the underline */
+}
+  
+  .skills-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skills-section ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive layout for smaller screens */
+  @media (max-width: 768px) {
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .skills-section {
+      width: 80%; /* Make each section take up more space on smaller screens */
+      margin-bottom: 20px;
+    }
+  }
+/*project*/
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns all content inside #projects */
+    text-align: center;
+    margin-top: 50px;
+}
+
+#projects .top-item {
+    font-size: 3em;
+    color: #3f3b3b;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+#projects .top-item::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background-color: #5c5555;
+}
+.projects-list {
+  display: flex;
+  flex-direction: column;  /* Stacks the projects one below the other */
+  gap: 30px;  /* Space between projects */
+}
+
+.project-item {
+  background: #f7f6f5c9; /* Light background for post style */
+  padding: 20px;
+  width: calc(80% 30px); /* Adjust this percentage for wider posts */
+  margin: 10px; /* Adjust margin to reduce space between items */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: left; /* Align text to the left */
+  margin-bottom: -5px; /* Space between posts */
+  border: 2px solid #d6c52a; /* You can change the color of the border */
+    box-sizing: border-box;
+}
+
+.project-item:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+}
+
+/* Image Grid */
+
+.project-item .images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusts columns based on screen size */
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.project-item .images img {
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Image Hover Effect */
+.project-item .images img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Title and description styling */
+.project-title {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.short-description {
+  font-size: 1.1em;
+  margin: 0.5em 0;
+  font-weight: bold;
+}
+
+/* Additional paragraph styles within more-info */
+.more-info p {
+  margin: 0.5em 0;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Adjust min-width to control width */
+  gap: 20px;
+  margin-top: 30px;
+}
+/* Like button styling */
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Like icon inside the button */
+.like-button .icon {
+  margin-right: 10px;
+  font-size: 15px; /* Slightly larger icon */
+}
+
+/* Hover effect */
+.like-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Active state for the button (when liked) */
+.like-button.liked {
+  background-color: #ff4081; /* Pink background when liked */
+}
+
+/* Icon for the like button */
+.like-button .icon-heart {
+  color: #fff;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .project-item {
+      width: 100%; /* On smaller screens, the posts will take up full width */
+  }
+}
+/* Contact Info Section */
+#contact {
+  background-color: #f4f4f4; /* Light background color */
+  padding: 50px 20px; /* Add padding around the section */
+  text-align: center; /* Ensure the content is centered horizontally */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  min-height: 100vh; /* Full height of the viewport */
+  width: 100%;
+  padding-left: 21%; /* Move the section slightly to the right */
+}
+
+/* Contact Me Title */
+#contact .top-item {
+  font-size: 3em; /* Make the title large */
+  color: #3f3b3b; /* Dark gray color */
+  margin-bottom: 1em; /* Space below the title */
+  position: relative; /* To position the underline */
+  text-align: center; /* Center the title text */
+  width: 100%;
+}
+
+/* Underline effect for title */
+#contact .top-item::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Position the line just below the title */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%; /* Length of the underline */
+  height: 3px; /* Thickness of the line */
+  background-color: #5c5555; /* Color of the line */
+}
+.contact-box {
+  display: inline-block;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #d0dd1c;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto; /* Center the box */
+  text-align: left; /* Align the content to the left */
+}
+/* Contact Information */
+.contact-info {
+  font-size: 1em;
+  color: #333;
+}
+
+.contact-info p {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.contact-info a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Adding Icons */
+.contact-info i {
+  margin-right: 10px;
+  color: #0077b5; /* LinkedIn Blue */
+  font-size: 1.6em;
+}
+
+.contact-info a i {
+  font-size: 1.8em;
+  margin-right: 5px;
+}
+
+/* Social Links Styling */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  margin: 0 15px;
+  font-size: 1.5em;
+  color: #0077b5; /* LinkedIn Blue */
+}
+
+.social-links a:hover {
+  color: #005582; /* Darker LinkedIn blue */
+}
+
+/* Adding responsiveness */
+@media (max-width: 768px) {
+  .contact-box {
+      width: 90%;
+      padding: 30px;
+  }
+
+  .contact-info {
+      font-size: 1.3em;
+  }
+
+  .contact-info i {
+      font-size: 1.5em;
+  }
+}
